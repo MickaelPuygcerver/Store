@@ -1,4 +1,5 @@
 ﻿using Store.Core.DomainObjects;
+using System.Collections.Generic;
 
 namespace Store.Catalogo.Domain
 {
@@ -6,6 +7,11 @@ namespace Store.Catalogo.Domain
     {
         public string Nome { get; private set; }
         public int Codigo { get; private set; }
+
+        #region EntityFramework
+        public ICollection<Produto> Produtos { get; set; }
+        protected Categoria() { }
+        #endregion
 
         public Categoria(string nome, int codigo)
         {
